@@ -1,1 +1,139 @@
-<h1>Feliz San Valentín</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" type="image/png" href="1.JPG">
+  <title>Feliz San Valentín, Nico!</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0049F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Tahoma";
+      font-style: normal;
+      color: #FFA6E7;
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      padding: 24px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 10px;
+      opacity: 0.6;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body onclick="changeVibe()">
+  <div class="container">
+  <img id="vibeImage" src="1.jpeg" alt="vibe image" />
+  <h1 id="phrase">¡Feliz San Valentín, niquito! <3 </h1>
+</div>
+
+
+<script>
+  const phrases = [
+    "Estamos hechos el uno para el otro\n\n cada día lo noto más\nyo no puedo vivir sin mi Nico\ny nico no puede vivir sin su Alansito\nte amo, lo sos todo",
+    "Te amo Nico",
+    "Feliz 14 de febrero guapo ❤️‍🩹",
+    "´Quiero pasar una eternidad con usted´",
+    "Te quiero con la eternidad que concede la brevedad de un momento inolvidable.",
+    "¡Ay, Niquito! No cabe duda: ¡el amor es una cosa esplendorosa!",
+    "Sos mi 00' para siempre!!!",
+    "Tesoro, deseo verte toda la vida",
+    "Sos lo que ilumina mis días",
+    "Me encanta existir en el mismo mundo que vos.",
+    "Sos la casualidad más bonita que me pasó",
+    "No sé cómo explicarlo, pero con vos todo tiene sentido, Nico",
+    "No existe distancia ni tiempo que cambie lo que siento por vos, esto es real",
+    "“Fue el tiempo que pasaste con tu rosa lo que la hizo tan importante.”",
+    "“El corazón tiene más cuartos que un hotel.”",
+    "“Amar a otra persona es ver el rostro de Dios.”",
+    "“La amo y eso es el principio y el fin de todo.”",
+    "“Si me recuerdas, no me importa que el resto del mundo me olvide.”"
+
+  ];
+
+  const images = [
+    "1.JPG",
+    "2.jpg",
+    "3.jpeg",
+    "4.jpeg",
+    "5.jpeg",
+    "6.jpg",
+    "7.JPG",
+    "8.jpeg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg",
+    "15.jpg"
+
+  ];
+
+  const phraseEl = document.getElementById("phrase");
+  const imageEl = document.getElementById("vibeImage");
+
+  
+  let showing = "text";
+  imageEl.style.display = "none";
+
+  function changeVibe() {
+    if (showing === "text") {
+    
+      phraseEl.style.display = "none";
+
+  
+      imageEl.src = images[Math.floor(Math.random() * images.length)];
+      imageEl.style.display = "block";
+
+      showing = "image";
+    } else {
+  
+      imageEl.style.display = "none";
+
+      phraseEl.textContent =
+        phrases[Math.floor(Math.random() * phrases.length)];
+      phraseEl.style.display = "block";
+
+      showing = "text";
+    }
+  }
+</script>
+
+</body>
+</html>
